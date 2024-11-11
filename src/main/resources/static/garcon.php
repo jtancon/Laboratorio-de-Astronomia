@@ -2,9 +2,9 @@
 session_start();
 date_default_timezone_set('America/Sao_Paulo');
 
-$Laboratório = $_SESSION['mesa'];
+$mesa = $_SESSION['mesa'];
 
-$numeromesa = intval($Laboratório);
+$numeromesa = intval($mesa);
 
 if (!$_COOKIE['token']) {
     header("Location: login.php");
@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' || isset($itensParaCarrinho)) {
         header('Location: ' . $_SERVER['HTTP_REFERER']);
         exit();
     } elseif ($_POST['mandar']) {
-        header('Location: insercao.php?mesa=' . $Laboratório);
+        header('Location: insercao.php?mesa=' . $mesa);
     }
 }
 
@@ -115,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['observacao'])) {
         <div style="display: flex; flex-direction: row; align-items: center; height: 100%; justify-content: center">
             <h3>Laboratório </h3>
             <?php
-            echo '<h3>' . '. Número: ' . $Laboratório . '</h3>';
+            echo '<h3>' . '  Número: ' . $mesa . '</h3>';
             ?>
         </div>
     </div>
@@ -141,7 +141,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['observacao'])) {
 <?php
 echo '<div id="produtos" class="pedidos" id="100" style="display: none">';
 
-$url = 'http://localhost:8080/api/mesa/pedidos/' . $Laboratório;
+$url = 'http://localhost:8080/api/mesa/pedidos/' . $mesa;
 $response = file_get_contents($url);
 $data = json_decode($response, true);
 
@@ -230,7 +230,7 @@ echo '<button class="btn-flutuante" style="display:none;" id="adicionar-todos-ca
 
     <?php
     if (!empty($_SESSION['carrinho'])) {
-        echo '<a href="insercao.php?mesa=' . $Laboratório . '" style="text-decoration: none"><button type="button" class="btnenvia" name="mandarpedido" value="mandar">Enviar o pedido</button></a>
+        echo '<a href="insercao.php?mesa=' . $mesa . '" style="text-decoration: none"><button type="button" class="btnenvia" name="mandarpedido" value="mandar">Enviar o pedido</button></a>
         <div class="btnlimpaconfere">
         <button type="submit" class="btnlimpacarrinho" name="limpar_carrinho" value="Limpar pedido">Limpar pedido</button>
         <button type="button" class="btnverificapedido" name="mandarpedido" value="Verificarpedido" class="btnsmanda" onclick="mostraconclusao()">Conferir o pedido</button>
@@ -279,7 +279,7 @@ echo '<button class="btn-flutuante" style="display:none;" id="adicionar-todos-ca
 <button class='btnpedido' onclick="mostrapedidos()" id="btnverpedido" id="btnverprodutos" style="display: flex">Ver os tópicos selecionados
 </button>
 <div class="pedidoconfere" id="conferepedido" style="display: none">
-    <form action="insercao.php?mesa=<?php echo $Laboratório ?>" method="post">
+    <form action="insercao.php?mesa=<?php echo $mesa ?>" method="post">
         <?php
         if (!empty($_SESSION['carrinho'])) {
             foreach ($_SESSION['carrinho'] as $index => $item) {

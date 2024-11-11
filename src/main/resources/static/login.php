@@ -10,13 +10,10 @@ curl_close($ch);
 
 $users = json_decode($response, true);
 
-// Inicializando o array 'erro' se não existir
-if (!isset($_SESSION['erro'])) {
-    $_SESSION['erro'] = [];
-}
 
 if (empty($users)) {
-    $_SESSION['erro'][] = 'Nenhum funcionário cadastrado';
+    $_SESSION['erro'][] = 'Nenhum garçom cadastrado';
+    
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -24,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $senha = isset($_POST['password']) ? $_POST['password'] : '';
 
     if (empty($garcon)) {
-        $_SESSION['erro'][] = 'Selecione um funcionário';
+        $_SESSION['erro'][] = 'Selecione um garçom';
     } elseif (empty($senha)) {
         $_SESSION['erro'][] = 'Digite a senha';
     } else {
@@ -43,15 +40,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $result = json_decode($response, true);
 
-        if (isset($result['token'])) {
-            setcookie('token', $result['token'], time() + 60 * 60 * 24, '/');
-            header('Location: index.php');
-            exit();
-        } else {
-            $_SESSION['erro'][] = 'Login falhou. Verifique suas credenciais.';
-        }
+        setcookie('token', $result['token'], time() + 60*60*24, '/');
+        header('Location: index.php');
+        exit();
+
     }
+
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,13 +60,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body style="justify-content: center">
 <main class="principal">
     <div class="conteudo">
-        <h2>Faça seu login</h2><br>
-        <?php if (!empty($_SESSION['erro'])): ?>
+        <h2> Faça seu login </h2><br>
+        <?php if ($_SESSION['erro']): ?>
             <div class="erro">
                 <?php foreach ($_SESSION['erro'] as $erro): ?>
                     <p><?= $erro ?></p>
                 <?php endforeach ?>
-            </div><br>
+            </div> <br>
         <?php endif;
         unset($_SESSION['erro']);
         ?>
@@ -77,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="input">
                 <label for="garcon">Usuário:</label>
                 <select name="garcon" id="garcon">
-                    <option value="">Selecione um Funcionário</option>
+                    <option value="">Selecione um Funcionario</option>
                     <?php
                     foreach ($users as $user) {
                         echo "<option value='{$user['email']}' name='garcon'>{$user['name']}</option>";

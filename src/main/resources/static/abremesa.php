@@ -41,12 +41,12 @@ if (empty($data)) {
 <link rel="stylesheet" href="imgs/criaficha.css">
 
 <header>
-    <h1>Laboratórios</h1>
+    <h1>Projetos</h1>
 </header>
 
 <body>
 <form action="abremesa.php?mesa=' . $mesa . '" method="post">
-<h2>Abrir um novo Laboratório?</h2>
+<h2>Abrir um novo <br>Projeto?</h2>
 <input type="hidden" name="mesa" value="' . $mesa . '">
 <button class="sim" type="submit">Sim</button>
 <button class="nao" type="button" onclick="window.location.href=\'index.php\'">Não</button>
