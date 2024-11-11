@@ -7,7 +7,7 @@ data class PedidoRequest(
     @field:NotBlank
     val codigoprodutos: Int,
     @field:NotBlank
-    val numeromesa: Int,
+    val numeroLaboratorio: Int,
     @field:NotBlank
     val quantidade: Int,
     val observacao: String? = null,

@@ -12,7 +12,7 @@ open class Pedido(
     var numeroPedido: Int,
 
     @Column(nullable = false)
-    var numeromesa: Int,
+    var numeroLaboratorio: Int,
 
     @Column(nullable = false)
     var quantidade: Int,
@@ -26,5 +26,5 @@ open class Pedido(
     @Column(nullable = false)
     var codigoProduto: Int
 ) {
-    fun toResponse() = PedidoResponse(numeroPedido, codGruEst, numeromesa, observacao, numeromesa, codigoProduto)
+    fun toResponse() = PedidoResponse(numeroPedido, codGruEst, numeroLaboratorio, observacao, numeroLaboratorio, codigoProduto)
 }

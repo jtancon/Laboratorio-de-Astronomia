@@ -12,7 +12,7 @@ if (!empty($_SESSION['carrinho'])) {
     foreach ($_SESSION['carrinho'] as $index => $item) {
         $carrinho_json[] = [
             "codigoprodutos" => intval($item['cod_pro']),
-            "numeromesa" => intval($mesa),
+            "numeroLaboratorio" => intval($mesa),
             "quantidade" => $item['quantidade'],
             "observacao" => isset($item['observacao']) ? $item['observacao'] : ' ',
             "codgruest" => intval($item['cod_gruest'])

@@ -20,7 +20,7 @@ class PedidoController(private val service: PedidoService, private val produtoSe
         val pedidos = reqList.map { req ->
             Pedido(
                 numeroPedido = numpedido,
-                numeromesa = req.numeromesa,
+                numeroLaboratorio = req.numeroLaboratorio,
                 quantidade = req.quantidade,
                 observacao = req.observacao,
                 codGruEst = req.codgruest,

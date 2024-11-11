@@ -4,7 +4,7 @@ date_default_timezone_set('America/Sao_Paulo');
 
 $mesa = $_SESSION['mesa'];
 
-$numeromesa = intval($mesa);
+$numeroLaboratorio = intval($mesa);
 
 if (!$_COOKIE['token']) {
     header("Location: login.php");

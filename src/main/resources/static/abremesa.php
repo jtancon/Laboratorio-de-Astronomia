@@ -54,10 +54,10 @@ if (empty($data)) {
 </body>
 ';
 
-} elseif ($data[0]['numeroMesa'] == $mesa && $data[0]['fechada'] == 'N') {
+} elseif ($data[0]['numeroLaboratorio'] == $mesa && $data[0]['fechada'] == 'N') {
     header('Location: garcon.php');
     exit();
-} elseif ($data[0]['numeroMesa'] == $mesa && $data[0]['fechada'] == 'S') {
+} elseif ($data[0]['numeroLaboratorio'] == $mesa && $data[0]['fechada'] == 'S') {
     echo '<link rel="stylesheet" href="CSS/criaficha.css">
     <header>
     <h1>Back-End</h1>
