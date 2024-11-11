@@ -1,6 +1,6 @@
 package br.pucpr.authserver
 
-import br.pucpr.authserver.laboratorio.LaboratorioRequest
+import br.pucpr.authserver.laboratorio.MesaRequest
 import br.pucpr.authserver.users.User
 import kotlin.random.Random
 
@@ -36,8 +36,8 @@ object Stubs {
 
     fun mesaStub(
         numeroMesa: Int = Random.nextInt(1, 1000)
-    ): LaboratorioRequest {
-        return LaboratorioRequest(
+    ): MesaRequest {
+        return MesaRequest(
             numeroMesa = numeroMesa
         )
     }
