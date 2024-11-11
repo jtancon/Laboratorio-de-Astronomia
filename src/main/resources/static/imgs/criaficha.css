@@ -1,0 +1,153 @@
+html{
+    background-image: url("../imgs/fundo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center; 
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    margin: 0%;
+    padding: 0%;
+}
+header{
+    margin: 0;
+    width: 100vw;
+    height: 100px;
+    background-color: #003865;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+li{
+    color: white;
+}
+h2{
+    font-size: 25px;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    color: white;
+    font-display: flex;
+}
+
+span{
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.formulario{
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    background-color: #003865;
+}
+
+.formu{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #003865;
+}
+
+.inputobscria{
+    font-size: 40px;
+    width: 60vw;
+    height: 200px;
+    padding-left: 30px;
+    padding-top: 15px;
+}
+
+.inputtxt {
+    width: 70vw;
+    height: 50px;
+}
+
+.formu input{
+    font-size: 40px;
+    width: 60vw;
+    height: 70px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding-left: 30px;
+}
+
+textarea{
+    font-size: 30px;
+    width: 50%;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btnvolta{
+    height: 200px;
+    width: 500px;
+    font-size: 50px;
+    background-color: #35518c;
+    color: #ffff;
+    border-radius: 10px;
+}
+
+.btnenvia{
+    background-color: #35518c;
+    color: #ffff;
+    font-size: 30px;
+}
+
+.btnescolha{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.sim{
+    width: 150px;
+    height: 70px;
+    border-radius: 30px;
+    font-size: 40px;
+    background-color: #46a61e;
+    color: #ffff;
+    margin: 10px;
+}
+.nao{
+    width: 150px;
+    height: 70px;
+    border-radius: 30px;
+    font-size: 40px;
+    background-color: #ec5858;
+    color: #ffff;
+    margin: 10px;
+}
+
+.btnsair{
+    height: 70px;
+    width: auto;
+    padding: 5px 3px 5px 3px;
+    font-size: 23px;
+    border-radius: 10px;
+    background-color: #ec5858;
+    color: #ffff;
+    margin-right: 15px;
+}
+form{
+    background-color: #003865;
+    margin: 30px;
+    padding: 20px;
+    border: 5px solid #ccc;
+    border-radius: 20px;
+    align-items: center
+}
