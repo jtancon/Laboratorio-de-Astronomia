@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header('Location: index.php');
     } else {
         $_SESSION['mesa'] = $mesa;
-        header('Location: abremesa.php');
+        header('Location: abrelab.php');
         exit();
     }
 }

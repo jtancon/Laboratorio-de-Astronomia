@@ -12,7 +12,7 @@ $users = json_decode($response, true);
 
 
 if (empty($users)) {
-    $_SESSION['erro'][] = 'Nenhum garçom cadastrado';
+    $_SESSION['erro'][] = 'Nenhum Funcionario cadastrado';
     
 }
 
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $senha = isset($_POST['password']) ? $_POST['password'] : '';
 
     if (empty($garcon)) {
-        $_SESSION['erro'][] = 'Selecione um garçom';
+        $_SESSION['erro'][] = 'Selecione um Funcionario';
     } elseif (empty($senha)) {
         $_SESSION['erro'][] = 'Digite a senha';
     } else {
