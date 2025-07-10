@@ -1,0 +1,98 @@
+### ListaUsuarios
+GET localhost:8080/api/users
+
+### Cadastra User
+POST localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "name": "teste",
+  "email": "teste@email.com",
+  "password": "1234",
+  "role": "ADM"
+}
+
+### Cadastra User
+POST localhost:8080/api/users
+Content-Type: application/json
+
+{
+"name": "Roberto",
+"email": "roberto@email.com",
+"password": "1234"
+}
+
+### Pega User pelo ID
+GET localhost:8080/api/users/2
+
+### Login
+POST localhost:8080/api/users/login
+Content-Type: application/json
+
+{
+  "email": "gui@gmail.com",
+  "password": "1234"
+}
+> {%
+client.global.set("token", response.body.token)
+ %}
+
+### Deleta User
+DELETE localhost:8080/api/users/2
+Authorization: Bearer {{token}}
+
+### Pega os CodGruEst
+GET localhost:8080/api/codgruest
+
+### Salva Pedido
+POST localhost:8080/api/pedido
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+[  {
+    "codigoprodutos":10,
+   "numeroLaboratorio":5,
+   "quantidade":1,
+   "observacao":"",
+   "codgruest":2
+  }]
+
+### Lista Pedidos
+GET localhost:8080/api/pedidos/1
+
+### Cadastra Produtos
+POST localhost:8080/api/produto
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+[
+  {
+    "codigoProduto": 101,
+    "descricao": "bujão",
+    "preco": 80,
+    "codGruEst": 1
+  }
+]
+
+### Atualiza Produto
+PUT localhost:8080/api/produto/1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "codigoProduto": 202,
+  "descricao": "Batata",
+  "preco": 50.50,
+  "codGruEst": 1
+}
+
+### Lista Produtos
+GET localhost:8080/api/produto
+
+### Cria Mesa
+POST localhost:8080/api/mesa/5
+Authorization: Bearer {{token}}
+
+### Lista Mesas
+GET localhost:8080/api/mesa/pedidos/5
+
